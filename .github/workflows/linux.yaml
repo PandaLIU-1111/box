@@ -79,14 +79,17 @@ jobs:
       - name: Upload Release Asset
         if: steps.box.outcome == 'success'
         id: upload-release-asset
-        uses: actions/upload-release-asset@v1
+#        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: ./box
-          asset_name: box_${{ matrix.arch }}_linux
-          asset_content_type: application/x-sh
+        run:
+          gh release upload box_${{ matrix.arch }}_linux ./box
+#        with:
+#          upload_url: ${{ steps.get_release.outputs.upload_url }}
+#          asset_path: ./box
+#          asset_name: box_${{ matrix.arch }}_linux
+#          asset_content_type: application/x-sh
+
   arm64:
     name: PHP ${{ matrix.php-version }} ${{ matrix.arch }}
     runs-on: [self-hosted, linux, arm64]
@@ -160,11 +163,13 @@ jobs:
       - name: Upload Release Asset
         if: steps.box.outcome == 'success'
         id: upload-release-asset
-        uses: actions/upload-release-asset@v1
+#        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: ./box
-          asset_name: box_${{ matrix.arch }}_linux
-          asset_content_type: application/x-sh
+        run:
+          gh release upload box_${{ matrix.arch }}_linux ./box
+#        with:
+#          upload_url: ${{ steps.get_release.outputs.upload_url }}
+#          asset_path: ./box
+#          asset_name: box_${{ matrix.arch }}_linux
+#          asset_content_type: application/x-sh
