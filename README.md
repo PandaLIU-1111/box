@@ -12,7 +12,6 @@ Click [here](https://github.com/hyperf/box/actions) to download ~
 Please notice that box **ONLY** supports for **Swow**, but **NOT** Swoole, so your Hyperf application should created by [hyperf/swow-skeleton](https://github.com/hyperf/swow-skeleton) or other else swow skeleton.
 
 ### Usage
-
 #### Install box
 
 ##### Mac
