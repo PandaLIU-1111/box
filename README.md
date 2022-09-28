@@ -15,7 +15,6 @@ Please notice that box **ONLY** supports for **Swow**, but **NOT** Swoole, so yo
 #### Install box
 
 ##### Mac
-
 ```bash
 wget https://github.com/hyperf/box/releases/download/v0.0.4/box_x86_64_macos -O box
 sudo mv ./box /usr/local/bin/box
